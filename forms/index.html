@@ -8,8 +8,6 @@
 <link rel="stylesheet" type="text/css"
 	href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/99gains.css">
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.3/angular.min.js"></script>
 
 <link rel="apple-touch-icon" sizes="57x57"
 	href="/images/favicon/apple-touch-icon-57x57.png">
@@ -59,7 +57,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">99Gains</a>
+				<a class="navbar-brand" href="/">CareGivers4All</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -86,61 +84,101 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">A form</h3>
-				</div>
-				<div class="panel-body">
-					<div class="col-xs-12">
-						<form role="form">
+			<div class="col-sm-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">A form</h3>
+					</div>
+					<div class="panel-body">
+						<form data-toggle="validator" data-disable="true"
+							class="form-horizontal" method="post">
 							<div class="form-group">
-								<label for="firstname">First name</label>
-								<input type="text" class="form-control" id="firstname" placeholder="First name">
-							</div>
-							<div class="form-group">
-								<label for="lastname">Last name</label>
-								<input type="text" class="form-control" id="lastname" placeholder="Last name">
-							</div>
-							<div class="form-group">
-								<div class="btn-group" data-toggle="buttons">
-									<label class="btn btn-default active">
-										<input type="radio" name="options" id="option1"
-											autocomplete="off" checked="">
-										Mr.
-									</label>
-									<label class="btn btn-default">
-										<input type="radio" name="options" id="option2"
-											autocomplete="off">
-										Mrs.
-									</label>
-									<label class="btn btn-default">
-										<input type="radio" name="options" id="option3"
-											autocomplete="off">
-										Ms.
-									</label>
+								<label for="firstname" class="col-sm-2 control-label">First
+									name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="firstname"
+										placeholder="First name" required>
+									<span class="help-block with-errors"></span>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="address">Address</label>
-								<input type="text" class="form-control" id="address" placeholder="35 Blair street">
+								<label for="lastname" class="col-sm-2 control-label">Last
+									name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="lastname"
+										placeholder="Last name" required>
+									<span class="help-block with-errors"></span>
+								</div>
 							</div>
 							<div class="form-group">
-								<label for="city">City</label>
-								<input type="text" class="form-control" id="city" placeholder="Toronto">
+								<div class="col-sm-offset-2 col-sm-10">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-default active">
+											<input type="radio" name="options" id="option1"
+												autocomplete="off" checked>
+											Mr.
+										</label>
+										<label class="btn btn-default">
+											<input type="radio" name="options" id="option2"
+												autocomplete="off">
+											Mrs.
+										</label>
+										<label class="btn btn-default">
+											<input type="radio" name="options" id="option3"
+												autocomplete="off">
+											Ms.
+										</label>
+									</div>
+								</div>
 							</div>
 							<div class="form-group">
-								<label for="city">Province</label>
-								<input type="text" class="form-control" id="province" placeholder="Ontario">
+								<label for="address" class="col-sm-2 control-label">Address</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="address"
+										placeholder="35 Blair street" required>
+									<span class="help-block with-errors"></span>
+								</div>
 							</div>
 							<div class="form-group">
-								<label for="postalcode">Postal Code</label>
-								<input type="text" class="form-control" id="postalcode" placeholder="M4B3N5">
+								<label for="city" class="col-sm-2 control-label">City</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="city"
+										placeholder="Toronto" required>
+									<span class="help-block with-errors"></span>
+								</div>
 							</div>
 							<div class="form-group">
-								<label for="phonenumber">Phone number</label>
-								<input type="tel" class="form-control" id="phonenumber" placeholder="416-123-456">
+								<label for="city" class="col-sm-2 control-label">Province</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="province"
+										placeholder="Ontario" required>
+									<span class="help-block with-errors"></span>
+								</div>
 							</div>
-							<button type="submit" class="btn btn-success">Submit</button>
+							<div class="form-group">
+								<label for="postalcode" class="col-sm-2 control-label">Postal
+									Code</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="postalcode"
+										placeholder="M4B3N5" required>
+									<span class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="phonenumber" class="col-sm-2 control-label">Phone
+									number</label>
+								<div class="col-sm-10">
+									<input type="tel" class="form-control" id="phonenumber"
+										placeholder="416-123-4567" required>
+									<span class="help-block with-errors"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-success">Submit</button>
+									<button type="reset" class="btn btn-danger">Reset</button>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -150,5 +188,6 @@
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/validator.min.js"></script>
 </body>
 </HTML>
