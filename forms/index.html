@@ -87,7 +87,7 @@
 			<div class="col-sm-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3 class="panel-title">A form</h3>
+						<h3 class="panel-title">Registration form</h3>
 					</div>
 					<div class="panel-body">
 						<form data-toggle="validator" data-disable="true"
@@ -111,7 +111,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-							<label for="email" class="col-sm-2 control-label">E-mail Address</label>
+								<label for="email" class="col-sm-2 control-label">E-mail
+									Address</label>
 								<div class="col-sm-10">
 									<input type="email" class="form-control" id="email"
 										placeholder="email@example.com" required>
@@ -192,10 +193,66 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Other info</h3>
+					</div>
+					<div class="panel-body controls">
+						<form data-toggle="validator" data-disable="true"
+							class="form-horizontal input-append" method="post">
+							<label for="languages" class="col-sm-2 control-label">Languages
+								spoken</label>
+							<div class="entry input-group col-sm-offset-2 col-sm-10">
+								<input class="form-control" name="fields[]" type="text"
+									placeholder="Enter a language" id="languages" />
+								<span class="input-group-btn">
+									<button class="btn btn-success btn-add" type="button">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/validator.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(document)
+					.on(
+							'click',
+							'.btn-add',
+							function(e) {
+								e.preventDefault();
+
+								var controlForm = $('.controls form:first'), currentEntry = $(
+										this).parents('.entry:first'), newEntry = $(
+										currentEntry.clone()).appendTo(
+										controlForm);
+
+								newEntry.find('input').val('');
+								controlForm
+										.find('.entry:not(:last) .btn-add')
+										.removeClass('btn-add')
+										.addClass('btn-remove')
+										.removeClass('btn-success')
+										.addClass('btn-danger')
+										.html(
+												'<span class="glyphicon glyphicon-minus"></span>');
+							}).on('click', '.btn-remove', function(e) {
+						$(this).parents('.entry:first').remove();
+
+						e.preventDefault();
+						return false;
+					});
+		});
+	</script>
 </body>
 </HTML>

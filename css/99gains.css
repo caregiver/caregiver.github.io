@@ -6,6 +6,11 @@ body {
 	color: #1C9FFC;
 }
 
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
 #videos {
 	text-align: center;
 	position: relative;
